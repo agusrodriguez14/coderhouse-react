@@ -1,0 +1,34 @@
+.card-detail_img {
+  height: 40%;
+  object-fit: cover;
+}
+
+.card-detail_img img {
+  width: 40%;
+  height: 40%;
+  object-fit: cover;
+}
+
+.card-detail2 {
+  margin: 10px auto;
+  width: 60%;
+  height: 60%;
+  border-radius: 4px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+  overflow: hidden;
+  transition: all 0.2s ease-in;
+  cursor: pointer;
+}
+
+.card-detail_detail {
+  padding: 12px 8px;
+}
+
+small {
+  color: #8c8c8e;
+}
+
+.card-detail_muted {
+  color: #8c8c8e;
+}
