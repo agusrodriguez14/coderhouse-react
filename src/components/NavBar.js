@@ -14,9 +14,9 @@ function NavBar() {
 
       <Link to="/category/verdura">Verduras</Link>
       <Link to="/category/fruta">Frutas</Link>
-      <Link to="/cart">Carrito</Link>
+  
 
-      <CartWidget />
+      <Link to="/cart"><CartWidget /></Link>
     </nav>
   );
 }

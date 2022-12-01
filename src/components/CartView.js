@@ -1,19 +1,33 @@
 import React, { useContext } from "react";
+import { createBuyOrderFirestoreWithStock } from "./firebase";
 import cartContext from "./CartContext";
 import Button from "./Button";
 import "./itemdetail.css";
-import { Link } from "react-router-dom";
-
-
-
-
-// 1. consumir el context -> importamos el context y importamos el useContext
-// 2. mostrar un listado de items del array del context
+import { useNavigate } from "react-router-dom";
+import BuyForm from "./BuyForm";
 
 function CartView() {
   const { cart, clear, removeItem, totalPriceInCart } = useContext(cartContext);
+  const navigate = useNavigate();
 
   if (cart.length === 0) return <h1>Carrito Vacio</h1>;
+
+  function createBuyOrder(userData) {
+    const buyData = {
+      buyer: userData,
+      items: cart,
+      total: totalPriceInCart(),
+      date: new Date(),
+    };
+
+    createBuyOrderFirestoreWithStock(buyData).then((orderId) => {
+      clear();
+      navigate(`/checkout/${orderId}`);
+      
+    });
+  }
+
+
   
   return (
     <div>
@@ -35,12 +49,15 @@ function CartView() {
        
         </div>
       ))}
-      <Button type="danger" onClick={clear}>
+     <Button type="danger" onClick={clear}>
         Vaciar Carrito
       </Button>
+     
       <h2>Total a pagar: ${totalPriceInCart()}</h2>
+      <BuyForm onSubmit={createBuyOrder} />
     </div>
   );
 }
 
 export default CartView;
+

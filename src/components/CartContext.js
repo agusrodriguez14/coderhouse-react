@@ -60,26 +60,13 @@ export function CartContextProvider(props) {
   function removeItem(itemId) {
     
     let itemFound = cart.find((itemInCart) => itemInCart.id === itemId);
-    
     cart.splice(itemFound, 1);
-    
-    
-    setCart(cart);
-
-  
-    
-
-
-    
-    
-   
-
-  
-    
-  }
+    setCart([...cart]);}
 
   function clear() {
-    /*  */
+    cart.splice(0, cart.length);
+    setCart([...cart]);
+    
   }
 
   const value = {
@@ -87,7 +74,8 @@ export function CartContextProvider(props) {
     addToCart,
     totalItemsInCart,
     removeItem,
-    totalPriceInCart
+    totalPriceInCart,
+    clear
   };
 
   //3.Creamos el "value" para los componentes que consuman el context

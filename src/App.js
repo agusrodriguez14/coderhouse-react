@@ -8,7 +8,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartContextProvider } from "./components/CartContext";
 import CartView from "./components/CartView";
 
+import { exportItemsToFirestore, testDatabase } from "./components/firebase";
+
 function App() {
+  
   return (
     <div className="App">
       {/* 5. Importamos y renderizamos el Provider */}
@@ -23,10 +26,16 @@ function App() {
             />
             <Route path="/detalle/:id" element={<ItemDetailContainer />} />
             <Route path="/cart" element={<CartView />} />
+            <Route
+              path="/checkout/:orderid"
+              element={<h1>Gracias por tu compra</h1>}
+            />
+
             <Route path="*" element={<h1>404: Ruta no encontrada</h1>} />
           </Routes>
         </BrowserRouter>
       </CartContextProvider>
+     
     </div>
   );
 }
