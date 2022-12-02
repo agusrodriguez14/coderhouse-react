@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./button.css";
 
 function Button(props) {
-  const [colorState, setColorState] = useState({
+  const [colorState, ] = useState({
     backgroundColor: props.color,
   });
 
