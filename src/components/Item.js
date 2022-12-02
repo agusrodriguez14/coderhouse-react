@@ -1,5 +1,5 @@
 //1. Importamos el hook de Ciclo de Vida
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Button from "./Button";
 import "./item.css";
