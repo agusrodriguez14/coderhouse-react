@@ -1,0 +1,41 @@
+.form {
+    
+    width:40%;
+    margin: 0 auto;
+
+}
+.button{
+    width:40%;
+ 
+
+}
+.form legend{
+    font-weight:bold;
+    font-size:12px;
+}
+.form button{
+    font-weight:bold;
+    font-size:15px;
+    background-color: darkgreen;
+    color:#FFFFFF;
+;
+
+}
+
+
+
+.form ol li{
+    padding-bottom:5px;
+}
+
+.form input[type=text] {
+    border:1px solid #CCCCCC;
+    margin-left: 50px;
+
+}
+.form input.btn {
+    padding:3px;
+    color:#FFFFFF;
+    background-color:#990000;
+    border:1px solid #000000;
+}

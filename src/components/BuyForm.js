@@ -1,6 +1,7 @@
 // Inicio del código
 import React, { useState } from "react";
 import InputForm from "./InputForm";
+import "./form.css";
 
 export default function BuyForm(props) {
   const [userData, setUserData] = useState({
@@ -8,8 +9,6 @@ export default function BuyForm(props) {
     email: "",
     phone: "",
   });
-
-  console.log(userData);
 
   function onInputChange(evt) {
     const inputName = evt.target.name;
@@ -26,7 +25,7 @@ export default function BuyForm(props) {
   }
 
   return (
-    <form onSubmit={onSubmit}>
+    <form className="form" onSubmit={onSubmit}>
       <InputForm
         required="true"
         title="Nombre"
@@ -34,6 +33,8 @@ export default function BuyForm(props) {
         value={userData.name}
         onInputChange={onInputChange}
       />
+      <p></p>
+        
       <InputForm
         required="true"
         title="Email"
@@ -41,15 +42,17 @@ export default function BuyForm(props) {
         value={userData.email}
         onInputChange={onInputChange}
       />
+      <p></p>
       <InputForm
         required="true"
         title="Teléfono"
         name="phone"
         value={userData.phone}
         onInputChange={onInputChange}
-      />
+       
+      /> <p></p>
 
-      <button onClick={onSubmit}>Crear orden</button>
+      <button className="button"onClick={onSubmit}>Finalizar Compra</button>
     </form>
   );
 }

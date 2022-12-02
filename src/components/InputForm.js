@@ -3,8 +3,9 @@ import React from "react";
 function InputForm(props) {
   return (
     <>
-      <label style={{ width: "100px", marginRight: 4 }}>{props.title}</label>
+      <label style={{ width: "200px", marginLeft: 0 }}>{props.title}</label>
       <input
+        style={{ width: "200px", marginLeft: 2 }}
         required={true}
         value={props.value}
         name={props.name}

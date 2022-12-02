@@ -3,6 +3,7 @@ import { createBuyOrderFirestoreWithStock } from "./firebase";
 import cartContext from "./CartContext";
 import Button from "./Button";
 import "./itemdetail.css";
+import "./form.css";
 import { useNavigate } from "react-router-dom";
 import BuyForm from "./BuyForm";
 
@@ -35,7 +36,7 @@ function CartView() {
       {cart.map((cartItem) => (
       
         <div key={cartItem.id}>
-          <img className="card-detail_img" src={cartItem.thumbnail} alt={cartItem.nombre} />
+          <img className="card-detail_img2" src={cartItem.thumbnail} alt={cartItem.nombre} />
           <h3>{cartItem.nombre}</h3>
           <h4>$ {cartItem.precio}</h4>
           <h4>Cantidad: {cartItem.count}</h4>
@@ -54,7 +55,7 @@ function CartView() {
       </Button>
      
       <h2>Total a pagar: ${totalPriceInCart()}</h2>
-      <BuyForm onSubmit={createBuyOrder} />
+      <BuyForm className="form" onSubmit={createBuyOrder} />
     </div>
   );
 }

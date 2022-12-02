@@ -10,16 +10,7 @@ function ItemDetail({ product }) {
   const { addToCart } = useContext(cartContext);
 
   function onAddToCart(count) {
-    /* Swal.fire({
-      title: `Agregadas ${count} unidades al Carrito`,
-      text: "¿Deseas ir al carrito?",
-      icon: "success",
-      confirmButtonText: "Ir al carrito",
-    }).then((result) => {      
-      if (result.isConfirmed) {
-        navigate("/cart");
-      }
-    }); */
+
 
     const itemForCart = {
       ...product,
